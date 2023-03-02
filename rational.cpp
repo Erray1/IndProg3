@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-// Вспомогательные операции
+// Г‚Г±ГЇГ®Г¬Г®ГЈГ ГІГҐГ«ГјГ­Г»ГҐ Г®ГЇГҐГ°Г Г¶ГЁГЁ
 
 int rational::nod(int a, int b) {
 	while (a > 0 && b > 0)
@@ -17,14 +17,14 @@ int rational::nok(int a, int b) {
 	return (a * b) / nod(a, b);
 }
 
-// Методы
+// ГЊГҐГІГ®Г¤Г»
 
 rational::rational(int a, int b) {
 
 	int n = nod(a, b);
 
 	if (b == 0) {
-		cout << "Попытка деления на ноль\n";
+		cout << "ГЏГ®ГЇГ»ГІГЄГ  Г¤ГҐГ«ГҐГ­ГЁГї Г­Г  Г­Г®Г«Гј\n";
 		this->a = 0;
 		this->b = 0;
 		return;
@@ -40,8 +40,8 @@ rational::rational(int a, int b) {
 		this->b = b;
 	}
 	else if (a == b) {
-		this->a = 1;
-		this->b = 1;
+		this->a = a;
+		this->b = b;
 	}
 	else if (a < b) {
 		if (n != 1) {
@@ -62,7 +62,7 @@ void rational::set(int a, int b) {
 	int n = nod(a, b);
 
 	if (b == 0) {
-		cout << "Попытка деления на ноль\n";
+		cout << "ГЏГ®ГЇГ»ГІГЄГ  Г¤ГҐГ«ГҐГ­ГЁГї Г­Г  Г­Г®Г«Гј\n";
 		this->a = 0;
 		this->b = 0;
 		return;
@@ -78,8 +78,8 @@ void rational::set(int a, int b) {
 		this->b = b;
 	}
 	else if (a == b) {
-		this->a = 1;
-		this->b = 1;
+		this->a = a;
+		this->b = b;
 	}
 	else if (a < b) {
 		if (n != 1) {
@@ -95,7 +95,7 @@ void rational::show() {
 	cout << a << "/" << b << "\n";
 }
 
-// Операторы
+// ГЋГЇГҐГ°Г ГІГ®Г°Г»
 
 void rational::operator=(const rational& other) {
 	this->a = other.a;
