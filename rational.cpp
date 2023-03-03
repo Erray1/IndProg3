@@ -4,7 +4,7 @@ using namespace std;
 
 // Âñïîìîãàòåëüíûå îïåðàöèè
 
-int rational::nod(int a, int b) {
+int nod(int a, int b) {
 	while (a > 0 && b > 0)
 		if (a > b)
 			a %= b;
@@ -13,7 +13,7 @@ int rational::nod(int a, int b) {
 	return a + b;
 }
 
-int rational::nok(int a, int b) {
+int nok(int a, int b) {
 	return (a * b) / nod(a, b);
 }
 
@@ -112,20 +112,9 @@ rational rational::operator+(const rational& other) {
 rational operator-(const rational& first, const rational& second)
 {
 	int a = first.a;
-	int b = second.a;
-	int nod_chisl;
-	while (a > 0 && b > 0) {
-		if (a > b)
-			a %= b;
-		else
-			b %= a;
-	}
-	nod_chisl = a + b;
-	int nok_znam = (first.a * first.b) / nod_chisl;
-		
-	
+	int b = second.a;		
 
-	int new_b = nok_znam;
+	int new_b = nok(a, b);
 	int new_a = abs((new_b / first.b) * first.a - (new_b / second.b) * second.a);
 	rational p = rational(new_a, new_b);
 	return p;
