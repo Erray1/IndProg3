@@ -3,8 +3,6 @@ class rational
 {
 private:
 	int a, b;
-	int nod(int a, int b);
-	int nok(int a, int b);
 public:
 	rational();
 	rational(int a, int b);
